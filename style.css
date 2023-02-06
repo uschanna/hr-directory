@@ -1,82 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+table {
+    border: 1px solid #1979ff;
+    border-radius: 2px;
+    border-spacing: 0;
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid #1979ff;
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company HR Directory from a CSV File</title>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
-  <link href="style.css" rel="stylesheet">
-</head>
-
-<body>
-  <h1>Company HR Directory</h1>
-  <!-- Playing with w3schools search box -->
-  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-    <table id="directory">
-      <thead>
-        <tr>
-          <th>Photo</th>
-          <th>Name</th>
-          <th>Age</th>
-          <th>Gender</th>
-          <th>Nationality</th>
-          <th>Location</th>
-          <th>Email</th>
-          <th>Home phone</th>
-          <th>Mobile phone</th>
-          <th>Username</th>
-          <th>Date registered</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-</body>
-
-<script>
-  d3.csv("hr.csv", function (data) {
-    console.log(data);
-    let row = "<tr>";
-    row += "<td><img src='" + data['picture.thumbnail'] + "'></td>";
-    row += "<td>" + data['name.title'] + ' ' + data.nameFirst + ' ' + data.nameLast + "</td>";
-    row += "<td>" + data['dob.age'] + '(' + data['dob.date'] + ')' + "</td>";
-    row += "<td>" + data.gender + "</td>";
-    row += "<td>" + data.nat + "</td>";
-    row += "<td>" + data['location.street.number'] + ' ' + data['location.street.name'] + "<br>" + data.city + ', ' + data.state + ', ' + data.country + ' ' +  data['location.postcode'] + "</td>";
-    row += "<td>" + data.email + "</td>";
-    row += "<td>" + data.phone + "</td>";
-    row += "<td>" + data.cell + "</td>";
-    row += "<td>" + data['login.username'] + "</td>";
-    row += "<td>" + data['registered.date'] + "</td>";
-    d3.select("#directory tbody").append("tr").html(row);
-  });
-
-  // code taken and tweaked from w3schools.com
-  function myFunction() {
-  // Declare variables 
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("directory");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
 }
 
-</script>
+th, td {
+    font-family: monospace;
+    padding: 12px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    color: rgb(38, 37, 37);
+    text-align: left;
+    border-bottom: 3px solid #1979ff;
+    background-color: #e5f0ff;
+}
+
+tr:hover {background-color: rgb(222, 229, 249);}
 
 
-</html>
+ h1 {
+    font-family: open-sans, sans-serif;
+    font-size: 30px;
+    color: #373839;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+
+input[type=text] {
+    width: 250px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #1979ff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-bottom: 3px solid #1979ff;
+}
+
+body {
+    margin-left: 20px;
+    margin-right: 20px;
+}
