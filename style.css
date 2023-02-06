@@ -1,0 +1,47 @@
+table {
+    border: 1px solid #303030;
+    border-radius: 2px;
+    border-spacing: 0;
+    width: 100%;
+}
+
+th, td {
+    font-family: monospace;
+    padding: 12px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #1979ff;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    position: sticky;
+    top: 0;
+}
+
+tr:hover {background-color: #ddd;}
+
+
+ h1 {
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: 400;
+    color: #1979ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input[type=text] {
+    width: 250px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
